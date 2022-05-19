@@ -7,17 +7,6 @@
  Tema        : MASCOTAS
  ============================================================================
  */
-/*			ERRORES:
- *
- * EN TRABAJO DEBE DE PISAR VALORES? PORQUE LO HACE?
- *
- * AL ENTRAR EN ALTA MSCOTA Y QUERER DAR DE ALTA A UN NUEVO DUENIO TIRA QUE NO HAY ESPACIO
- *
- * AL DAR DE ALTA NUEVA MASCOTA PISA EL ID DE OTRA REEMPLAZANDOLA
- *
- */
-
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,7 +20,7 @@
 #include "trabajo.h"
 #include "servicio.h"
 
-#include "informes.h"
+
 #include "duenio.h"
 #include "harcodeo.h"
 
@@ -94,7 +83,7 @@ int main(void) {
 
 	int idDuenio = 6000;
 
-	int bandera =1;
+	int banderaAlta = 1;
 
 	//ACA VA LA INICIALIZACION
 	inicializarEstructura(lista, TAM);
@@ -104,7 +93,6 @@ int main(void) {
 	//HARDCODEOS
 //	hardcodeo(lista, TAM, &idInicial, 6);
 	harcodearMascotas(lista, TAM, 6, &idInicial);
-	bandera=0;
 	hardcodeoTrabajo(trabajoLista, TAM_TRAB, &idTrabajoRandom, 5);
 	hardcodeoDuenio(listaDuenio, TAM_DUE, &idDuenio, 6);
 
@@ -118,8 +106,7 @@ int main(void) {
 				if(alta(lista, TAM,&idInicial, colorLista,TAM_COLOR,tipoLista,TAM_TIPO,listaDuenio,TAM_DUE,&idDuenio))
 				{
 					showMessage("\nALTA DE MASCOTA EXITOSA!");
-					bandera=0;
-
+					banderaAlta=0;
 				}
 				else
 				{
@@ -128,7 +115,7 @@ int main(void) {
 			break;
 			case 2:
 				//BAJA
-				if(bandera==1)
+				if(banderaAlta==1)
 				{
 					printf("NO HAY NINGUNA MASCOTA DENTRO DEL SISTEMA!");
 				}
@@ -140,7 +127,7 @@ int main(void) {
 			break;
 			case 3:
 				//MODIFICACION
-				if(bandera==1)
+				if(banderaAlta==1)
 				{
 					printf("NO HAY NINGUNA MASCOTA DENTRO DEL SISTEMA!");
 				}
@@ -152,7 +139,7 @@ int main(void) {
 			break;
 			case 4:
 				sortByTipoYNombre(lista, TAM, &idInicial, colorLista, TAM_COLOR, tipoLista, TAM_TIPO,listaDuenio,TAM_DUE);
-				bandera=0;
+				banderaAlta=0;
 				system("Pause");
 			break;
 			case 5:
@@ -169,7 +156,7 @@ int main(void) {
 			break;
 			case 8:
 				//ALTA  TRABAJO
-				if(bandera==1)
+				if(banderaAlta==1)
 				{
 					printf("\nNO SE DIO DE ALTA A NINGUNA MASCOTA!\n");
 				}
@@ -182,7 +169,7 @@ int main(void) {
 			break;
 			case 9:
 				//LISTAR TRABAJO
-				if(bandera==1)
+				if(banderaAlta==1)
 				{
 					printf("\nNO SE PUEDE LISTAR NO SE DIO DE ALTA AUN!\n");
 				}

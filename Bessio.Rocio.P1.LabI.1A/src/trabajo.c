@@ -153,7 +153,7 @@ int listarTrabajos(eTrabajo listaTrabajo[],int tamTrabajo,eMascota lista[],int t
 	char descripcionNombre[20];
 	char descripcionServicio[20];
 
-	if(listaTrabajo!=NULL && tamTrabajo>0)
+	if(listaTrabajo!=NULL && tamTrabajo>0 && lista!=NULL && tam>0 && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0 && listaServicio!=NULL && tamServ>0)
 	{
 		printf("\n\n");
 		//MUESTRO UN ENCABEZADO
@@ -177,11 +177,11 @@ int listarTrabajos(eTrabajo listaTrabajo[],int tamTrabajo,eMascota lista[],int t
 				bandera=1;
 			}
 		}
-		printf("|---------------------------------------------------------------------------------------------------------|\n");
 		if(bandera==0)
 		{
 			showMessage("\nNO HAY TRABAJOS CARGADOS EN EL SISTEMA!");
 		}
+		printf("|---------------------------------------------------------------------------------------------------------|\n");
 		todoOk = 0;
 	}
 	return todoOk;

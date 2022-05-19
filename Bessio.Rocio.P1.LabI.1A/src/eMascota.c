@@ -67,11 +67,11 @@ int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tip
 				bandera=1;
 			}
 		}
-		showMessage("-----------------------------------------------------------------------------------------|");
 		if(bandera==0)
 		{
-			showMessage("\nNO HAY MASCOTAS EN EL SISTEMA!");
+			showMessage("\nNO HAY MASCOTAS EN EL SISTEMA!\n");
 		}
+		showMessage("-----------------------------------------------------------------------------------------|");
 
 		todoOk = 0;
 	}
@@ -170,11 +170,8 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 
 	char confirmacion;
 
-	eMascota auxMascota; //PONER BIEN EL NOMBRE
-	//eDuenio auxDuenio;
+	eMascota auxMascota;
 
-
-	//SE CREA UNA VARIABLE AUXILIAR
 
 	if(lista!=NULL && tam>0 && pId!=NULL && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0)
 	{
@@ -220,13 +217,13 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 					getValidInt("\nID NO ENCONTRADO EN EL SISTEMA, REINTENTE:  ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
 				}
 				auxMascota.idDuenio = auxInt;
-					//MASCOTA
-					//CAMBIO EL VALOR DE IS EMPTY
+
+				//MASCOTA
+				//CAMBIO EL VALOR DE IS EMPTY
 			    auxMascota.isEmpty = 0;
 
-
-					//ACA VOY A COPIAR TODO LO DEL AUXILIR EN LA ORIGINAL
-					lista[indice] = auxMascota;
+			    //ACA VOY A COPIAR TODO LO DEL AUXILIR EN LA ORIGINAL
+				lista[indice] = auxMascota;
 
 				todoOk = 1;
 			}
@@ -244,11 +241,11 @@ int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 	int todoOk;
 
 	int indice;
-	int idBuscada; //LUEGO SACAR EL 0
+	int idBuscada;
 
 	char confirmacion;
 
-	if(lista!=NULL && tam>0 && pId!=NULL)
+	if(lista!=NULL && tam>0 && pId!=NULL && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0 && listaDuenio!=NULL && tamDuenio>0)
 	{
 		printf("\n____________________________________________________________");
 		printf("\n                                                            |");
@@ -263,7 +260,8 @@ int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 		{
 			if(indice==-1)
 			{
-				printf("\nNO SE ENCONTRO A NINGUNA MASCOTA CON ID Nº%d",idBuscada);
+				printf("\nNO SE ENCONTRO A NINGUNA MASCOTA CON ID Nº%d\n",idBuscada);
+
 			}
 			else
 			{
@@ -284,7 +282,7 @@ int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 				}
 				else
 				{
-					printf("\nBAJA CANCELADA!");
+					printf("\nBAJA CANCELADA!\n");
 				}
 				todoOk=1;
 			}
@@ -307,7 +305,7 @@ int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tam
 
 	int auxiliarMasco;
 
-	if(lista!=NULL && tam>0 && pId!=NULL)
+	if(lista!=NULL && tam>0 && pId!=NULL && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0 && listaDuenio!=NULL && tamDuenio>0)
 	{
 		printf("\n____________________________________________________________");
 		printf("\n                                                            |");
@@ -322,7 +320,7 @@ int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tam
 		{
 			if(indice==-1)
 			{
-				printf("\nNO SE ENCONTRO A NINGUNA MASCOTA CON ID Nº%d\n",idBuscada);
+				printf("\nNO SE ENCONTRO A NINGUNA MASCOTA CON ID Nº%d \n",idBuscada);
 			}
 			else
 			{
@@ -367,7 +365,7 @@ int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tam
 					break;
 					case 'B':
 						getUserConfirmation(&confirma, "\nESTA VACUNADO (S/N)?: ", "\nVALOR INVALIDO,INGRESE (S/N): ");
-
+						confirma = toupper(confirma);
 						getUserConfirmation(&opcion, "\nDESEA REALIZAR LA MODIFICACION DE LA MASCOTA? (S/N): ", "\nINGRESE VALOR VALIDO (S/N): ");
 						if(opcion=='s')
 						{

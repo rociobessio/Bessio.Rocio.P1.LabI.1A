@@ -11,7 +11,7 @@
 #include "trabajo.h"
 #include "servicio.h"
 
-#include "informes.h"
+
 #include "duenio.h"
 #include "harcodeo.h"
 
