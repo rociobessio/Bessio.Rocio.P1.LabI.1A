@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 #include "eMascota.h"
 #include  "utn.h"
@@ -101,7 +102,7 @@ int main(void) {
 	{
 		switch(menu())
 		{
-			case 1:
+			case 'A':
 				//ALTA
 				if(alta(lista, TAM,&idInicial, colorLista,TAM_COLOR,tipoLista,TAM_TIPO,listaDuenio,TAM_DUE,&idDuenio))
 				{
@@ -113,7 +114,7 @@ int main(void) {
 					showMessage("\nOCURRIO UN PROBLEMA CON EL SISTEMA!");
 				}
 			break;
-			case 2:
+			case 'C':
 				//BAJA
 				if(banderaAlta==1)
 				{
@@ -125,7 +126,7 @@ int main(void) {
 				}
 				system("Pause");
 			break;
-			case 3:
+			case 'B':
 				//MODIFICACION
 				if(banderaAlta==1)
 				{
@@ -137,24 +138,24 @@ int main(void) {
 				}
 				system("Pause");
 			break;
-			case 4:
+			case 'D':
 				sortByTipoYNombre(lista, TAM, &idInicial, colorLista, TAM_COLOR, tipoLista, TAM_TIPO,listaDuenio,TAM_DUE);
 				banderaAlta=0;
 				system("Pause");
 			break;
-			case 5:
+			case 'E':
 				listarTipoMascota(tipoLista, TAM_TIPO);
 				system("Pause");
 			break;
-			case 6:
+			case 'F':
 				listarColor(colorLista, TAM_COLOR);
 				system("Pause");
 			break;
-			case 7:
+			case 'G':
 				listarServicio(servicioLista, TAM_SERV);
 				system("Pause");
 			break;
-			case 8:
+			case 'H':
 				//ALTA  TRABAJO
 				if(banderaAlta==1)
 				{
@@ -166,7 +167,7 @@ int main(void) {
 				}
 				system("Pause");
 			break;
-			case 9:
+			case 'I':
 				//LISTAR TRABAJO
 				if(banderaAlta==1)
 				{
@@ -178,18 +179,18 @@ int main(void) {
 				}
 				system("Pause");
 			break;
-			case 10:
+			case 'J':
 				altaDuenio(listaDuenio, TAM_DUE, &idDuenio);
 				system("Pause");
 			break;
-			case 11:
+			case 'K':
 				listarDuenios(listaDuenio, TAM_DUE);
 				system("Pause");
 			break;
-			case 12:
+			case 'L':
 				submenu(lista, TAM, colorLista, TAM_COLOR, tipoLista, TAM_TIPO, fecha, servicioLista, TAM_SERV, trabajoLista, TAM_TRAB,listaDuenio,TAM_DUE);
 			break;
-			case 13:
+			case 'S':
 				getUserConfirmation(&salir, "\nDESEA FINALIZAR EL PROGRAMA (S/N)?", "\nERROR, INGRESE UN VALOR VALIDO (S/N): ");
 				if(salir=='s')
 				{
@@ -210,28 +211,38 @@ int main(void) {
 
 int menu()
 {
-	int opcion;
+	char opcion;
 	printf("\n\n\n\n");
 	printf("\n____________________________________________________________");
 	printf("\n                                                            |");
 	printf("\n                VETERINARIA    MASCOTAS                     |\n");
 	printf("____________________________________________________________|\n");
 	printf("____________________________");
-	printf("\n|1)ALTA MASCOTA            |\n|"
-			"2)BAJA MASCOTA            |\n|"
-			"3)MODIFICACION  MASCOTA   |\n|"
-			"4)MOSTRAR LISTA MASCOTAS  |\n|"
-			"5)LISTAR TIPOS            |\n|"
-			"6)LISTAR COLORES          |\n|"
-			"7)LISTAR SERVICIOS        |\n|"
-			"8)ALTA TRABAJO            |\n|"
-			"9)LISTAR TRABAJOS         |\n|"
-			"10)ALTA DUENIO            |\n|"
-			"11)LISTA DUENIOS          |\n|"
-			"12)INFORMES               |\n|"
-			"13)SALIR                  |\n");
+	printf("\n|A)ALTA MASCOTA            |\n|"
+			"B)MODIFICACION  MASCOTA   |\n|"
+			"C)BAJA MASCOTA            |\n|"
+			"D)MOSTRAR LISTA MASCOTAS  |\n|"
+			"E)LISTAR TIPOS            |\n|"
+			"F)LISTAR COLORES          |\n|"
+			"G)LISTAR SERVICIOS        |\n|"
+			"H)ALTA TRABAJO            |\n|"
+			"I)LISTAR TRABAJOS         |\n|"
+			"J)ALTA DUENIO             |\n|"
+			"K)LISTA DUENIOS           |\n|"
+			"L)INFORMES                |\n|"
+			"S)SALIR                   |\n");
 	printf("|__________________________|\n");
-	getValidInt("INGRESE UN NUMERO: ", "\nERROR, REINGRESE UN NUMERO VALIDO.", "\nUNICAMENTE NUMEROS.", 1, 13, &opcion);
+	printf("INGRESA OPCION: ");
+	fflush(stdin);
+	scanf("%c",&opcion);
+	opcion = toupper(opcion);
+	while(opcion!='A' && opcion!='B' && opcion!='C' && opcion!='D' && opcion!='E' && opcion!='F' && opcion!='G' && opcion!='H' && opcion!='I' && opcion!='J' && opcion!='K' && opcion!='L' && opcion!='M' &&  opcion!='S'  )
+	{
+		printf("\nENTRE (A-S): ");
+		fflush(stdin);
+		scanf("%c",&opcion);
+		opcion = toupper(opcion);
+	}
 
 
 	return opcion;
