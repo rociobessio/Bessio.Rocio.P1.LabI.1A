@@ -29,7 +29,7 @@ int menu();
 
 int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
 
-#define TAM 10 //TAM MASCOTAS
+#define TAM 15 //TAM MASCOTAS
 
 #define TAM_COLOR 5
 
@@ -92,9 +92,9 @@ int main(void) {
 
 	//HARDCODEOS
 //	hardcodeo(lista, TAM, &idInicial, 6);
-	harcodearMascotas(lista, TAM, 6, &idInicial);
-	hardcodeoTrabajo(trabajoLista, TAM_TRAB, &idTrabajoRandom, 5);
-	hardcodeoDuenio(listaDuenio, TAM_DUE, &idDuenio, 6);
+	harcodearMascotas(lista, TAM, 7, &idInicial);
+	hardcodeoTrabajo(trabajoLista, TAM_TRAB, &idTrabajoRandom, 6);
+	hardcodeoDuenio(listaDuenio, TAM_DUE, &idDuenio, 7);
 
 
 	do
@@ -163,7 +163,6 @@ int main(void) {
 				else
 				{
 					altaTrabajo(trabajoLista, TAM_TRAB, &idTrabajoRandom, lista, TAM, colorLista, TAM_COLOR, tipoLista, TAM_TIPO, servicioLista, TAM_SERV,listaDuenio,TAM_DUE);
-					showMessage("\nALTA DE TRABAJO EXITOSA!\n");
 				}
 				system("Pause");
 			break;
@@ -181,7 +180,6 @@ int main(void) {
 			break;
 			case 10:
 				altaDuenio(listaDuenio, TAM_DUE, &idDuenio);
-				showMessage("\nALTA DE DUENIO EXITOSA!\n");
 				system("Pause");
 			break;
 			case 11:

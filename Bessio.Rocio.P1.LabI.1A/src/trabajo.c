@@ -91,7 +91,7 @@ int altaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIdTrab,eMascota lis
 		{
 			if(indice==-1)
 			{
-				showMessage("\nNO HAY MAS ESPACIO EN EL SISTEMA!");
+				showMessage("\n           NO HAY MAS ESPACIO EN EL SISTEMA!");
 			}
 			else
 			{
@@ -132,6 +132,7 @@ int altaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIdTrab,eMascota lis
 				listaTrabajo[indice] = trabajoAux;
 
 				todoOk = 0;
+				showMessage("\nALTA DE TRABAJO EXITOSA!\n");
 			}
 		}
 		else
@@ -179,7 +180,7 @@ int listarTrabajos(eTrabajo listaTrabajo[],int tamTrabajo,eMascota lista[],int t
 		}
 		if(bandera==0)
 		{
-			showMessage("\nNO HAY TRABAJOS CARGADOS EN EL SISTEMA!");
+			showMessage("|                                NO HAY TRABAJOS EN EL SISTEMA                                            |");
 		}
 		printf("|---------------------------------------------------------------------------------------------------------|\n");
 		todoOk = 0;
@@ -201,7 +202,12 @@ int hardcodeoTrabajo(eTrabajo listaTrabajo[],int tamTrab,int* pIdTrab,int cant)
 			{2005,20001,2,{10,3,2001},0},
 			{2006,20001,4,{06,11,2016},0},
 			{2007,20002,5,{21,8,1999},0},
-	};
+			{2008,20000,6,{21,8,1999},0},
+			{2009,20003,1,{7,10,2004},0},
+			{2010,20001,4,{14,9,2012},0},
+			{2011,20002,5,{23,11,2009},0},
+
+	};//IDTRAB, IDSERV, IDMASC,FECHA,ISEMPTY
 
 
 	if(listaTrabajo!=NULL && tamTrab>0 && pIdTrab!=NULL && cant>0 && cant<=tamTrab )

@@ -69,9 +69,9 @@ int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tip
 		}
 		if(bandera==0)
 		{
-			showMessage("\nNO HAY MASCOTAS EN EL SISTEMA!\n");
+			showMessage("|                         NO HAY MASCOTAS EN EL SISTEMA                                  |");
 		}
-		showMessage("-----------------------------------------------------------------------------------------|");
+		showMessage("|----------------------------------------------------------------------------------------|");
 
 		todoOk = 0;
 	}
@@ -143,7 +143,7 @@ int cargarNombreMascota(eMascota vec[],int tam,int id, char descripcion[])
 	int todoOk =-1;
 
 	int indice;
-	//ACA SE LLAMA A BUSCAR: Y SE PASA EL INDICE
+	//ACA SE LLAMA A BUSCAR: Y SE PASA EL INDICE PARA CARGAR EL NOMBRE DE LA MASCOTA SIEMPRE QUE SE NECESITE
 	buscarReferencia(vec, tam, &indice, id);
 
 	if(vec!=NULL && tam>0 && descripcion!=NULL && indice!=-1)
@@ -183,40 +183,61 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 		{
 			if(indice==-1)
 			{
-				showMessage("\nNO HAY MAS ESPACIO EN EL SISTEMA!\n");
+				showMessage("\n           NO HAY MAS ESPACIO EN EL SISTEMA!");
 			}
 			else
 			{
+				//YA ENTRE, AUMENTO ID
 				auxMascota.id=*pId;
 				(*pId)++;
-				//ENTRO Y CARGO
+
+				//NOMBRE
 				getValidString("INGRESE NOMBRE DE LA MASCOTA: ", "\nERROR UNICAMENTE LETRAS: ", "\nINGRESE EN UN RANGO VALIDO: ", auxCad, 2, 20);
 				strupr(auxCad);
 				strcpy(auxMascota.nombre,auxCad);
 
+				//COLOR
 				listarColor(colorMascota, tamColor);
 				getValidInt("\nINGRESE EL COLOR DE LA MASCOTA: ", "\nINGRESE UNA ID VALIDA.", "\nINGRESE UNICAMENTE NUMEROS: ", 5000, 5004, &auxInt);
 				auxMascota.idColor = auxInt;
 
+				//TIPO
 				listarTipoMascota(tipoLista, tamTipo);
 				getValidInt("\nINGRESE EL TIPO DE MASCOTA: ", "\nESA ID NO ES VALIDA.", "\nINGRESE NUMEROS UNICAMENTE: ", 1000, 1004, &auxInt);
 				auxMascota.idTipo = auxInt;
 
+				//VACUNADO
 				getUserConfirmation(&confirmacion, "\nESTA VACUNADO (S/N): ", "\nVALOR INVALIDO,INGRESE (S/N): ");
 				confirmacion = toupper(confirmacion);
 				auxMascota.vacunado = confirmacion;
 
+				//EDAD
 				getValidInt("\nINGRESE LA EDAD DE LA MASCOTA: ", "\nINGRESE UN VALOR VALIDO ", "\nINGRESE NUMEROS UNICAMENTE: ", 1, 20, &auxInt);
 				auxMascota.edad = auxInt;
 
+				//DUENIO (PREGUNTO SI ESTA EN LA LISTA, SI NO LO ENVIO A QUE DE SU ALTA)
 				listarDuenios(listaDuenio, tamDuenio);
-
-				getValidInt("\nINGRESE ID DEL DUENIO AL QUE SE LE ASIGNA LA MASCOTA: ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
-				while(!buscarReferenciaDuenio(listaDuenio, tam, &indiceDuenio, auxInt))
+				getUserConfirmation(&confirmacion, "\nESTA EL DUENIO DENTRO DE LA LISTA (S/N)?", "\nINGRESE VALOR VALIDO S/N");
+				if(confirmacion=='s')
 				{
-					getValidInt("\nID NO ENCONTRADO EN EL SISTEMA, REINTENTE:  ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
+					getValidInt("\nINGRESE ID DEL DUENIO AL QUE SE LE ASIGNA LA MASCOTA: ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
+					while(!buscarReferenciaDuenio(listaDuenio, tam, &indiceDuenio, auxInt))
+					{
+						getValidInt("\nID NO ENCONTRADO EN EL SISTEMA, REINTENTE:  ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
+					}
+					auxMascota.idDuenio = auxInt;
 				}
-				auxMascota.idDuenio = auxInt;
+				else
+				{
+					altaDuenio(listaDuenio, tamDuenio, pIdDuenio);
+					listarDuenios(listaDuenio, tamDuenio);
+					getValidInt("\nINGRESE ID DEL DUENIO AL QUE SE LE ASIGNA LA MASCOTA: ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
+					while(!buscarReferenciaDuenio(listaDuenio, tam, &indiceDuenio, auxInt))
+					{
+						getValidInt("\nID NO ENCONTRADO EN EL SISTEMA, REINTENTE:  ", "\nVALOR INVALIDO, REINTENTE.", "\nUNICAMENTE NUMEROS", 6000, 9000, &auxInt);
+					}
+					auxMascota.idDuenio = auxInt;
+				}
 
 				//MASCOTA
 				//CAMBIO EL VALOR DE IS EMPTY
@@ -261,7 +282,6 @@ int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 			if(indice==-1)
 			{
 				printf("\nNO SE ENCONTRO A NINGUNA MASCOTA CON ID Nº%d\n",idBuscada);
-
 			}
 			else
 			{
@@ -297,7 +317,7 @@ int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tam
 
 	int indice;
 
-	int idBuscada; //LUEGO SACAR EL 0
+	int idBuscada;
 
 	char confirma;
 
@@ -344,7 +364,6 @@ int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tam
 				{
 					printf("\nERROR INGRESE UN VALOR VALIDO A/B: ");
 					scanf("%c",&opcion);
-
 				}
 				switch(opcion)
 				{
@@ -389,7 +408,7 @@ int hardcodeo(eMascota lista[],int tam,int* pId,int cant)
 	int todoOk = -1;
 
 	eMascota auxHarcodeo [] = {
-			{000,1000,5002,"SALCHICHA",'S',5,6000,0},//ID, TIPO, COLOR,NOMBRE,VACUNADO,EDAD,ISEMPTY
+			{000,1000,5002,"SALCHICHA",'S',5,6000,0},
 			{000,1001,5001,"MICHI",'N',11,6001,0},
 			{000,1002,5000,"NACHO",'S',9,6002,0},
 			{000,1004,5003,"LOLA",'N',7,6003,0},
@@ -398,7 +417,7 @@ int hardcodeo(eMascota lista[],int tam,int* pId,int cant)
 			{000,1004,5003,"ROMAN",'S',1,6006,0},
 			{000,1002,5001,"CHARLY",'N',13,6007,0},
 			{000,1004,5002,"ALMENDRA",'S',8,6008,0}
-	};
+	};//     ID, TIPO,COLOR,NOMBRE,VACUNADO,EDAD,ISEMPTY
 
 
 	if(lista!=NULL && tam>0 && pId!=NULL && cant>0 && cant<=tam )
@@ -411,16 +430,13 @@ int hardcodeo(eMascota lista[],int tam,int* pId,int cant)
 		}
 		todoOk = 0;
 	}
-
-
 	return todoOk;
 }
 
 int sortByTipoYNombre(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
 {
-	int todoOk = 0;
+	int todoOk = -1;
 	eMascota auxMascota;
-
 
 	if(lista!=NULL && tam>0)
 	{
@@ -442,9 +458,9 @@ int sortByTipoYNombre(eMascota lista[],int tam,int* pId,eColor colorMascota[],in
 				}
 			}
 		}
+		todoOk=0;
 	}
 	listar(lista, tam, colorMascota, tamColor, tipoLista, tamTipo,listaDuenio,tamDuenio);
-
 	return todoOk;
 }
 

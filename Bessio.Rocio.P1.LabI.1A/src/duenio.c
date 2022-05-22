@@ -28,8 +28,8 @@ int listarDuenios(eDuenio listaDuenio[],int tam)
 	{
 
 		printf("\n\n\n\n");
-		showMessage("--------------------------------------------------------------------------|");
-		showMessage("			 ***LISTADO DE DUENIOS***                         | ");
+		showMessage("|-------------------------------------------------------------------------|");
+		showMessage("|			 ***LISTADO DE DUENIOS***                         | ");
 		printf("|-------------------------------------------------------------------------|\n");
 		showMessage("|  ID    |	    NOMBRE      |	APELLIDO        |   SEXO          |");
 		printf("|-------------------------------------------------------------------------|\n");
@@ -47,7 +47,7 @@ int listarDuenios(eDuenio listaDuenio[],int tam)
 		}
 		if(bandera==0)
 		{
-			showMessage("\nNO HAY NADA CARGADO EN EL SISTEMA!");
+			showMessage("|                 NO HAY DUENIOS EN EL SISTEMA                            |");
 		}
 		printf("|-------------------------------------------------------------------------|\n");
 
@@ -140,21 +140,23 @@ int altaDuenio(eDuenio listaDuenio[],int tam,int* pId)
 		{
 			if(indice==-1)
 			{
-				showMessage("\nNO HAY MAS ESPACIO EN EL SISTEMA!");
+				showMessage("\n           NO HAY MAS ESPACIO EN EL SISTEMA!");
 			}
 			else
 			{
 				//ENTRO Y CARGO
 
-
+				//NOMBRE
 				getValidString("INGRESE NOMBRE DEL DUENIO: ", "\nUNICAMENTE LETRAS: ", "\nRANGO INVALIDO REINTENTE. ", auxCad, 3, 24);
 				strupr(auxCad);
 				strcpy(auxDuenio.nombreDue,auxCad);
 
+				//APELLIDO
 				getValidString("\nINGRESE APELLIDO DEL DUENIO: ", "\nUNICAMENTE LETRAS: ", "\nRANGO INVALIDO REINTENTE. ", auxCad, 3, 24);
 				strupr(auxCad);
 				strcpy(auxDuenio.apellidoDue,auxCad);
 
+				//SEXO
 				printf("\nINGRESA SEXO DEL DUENIO (F/M): ");
 				fflush(stdin);
 				scanf("%c",&auxChar);
@@ -179,6 +181,7 @@ int altaDuenio(eDuenio listaDuenio[],int tam,int* pId)
 				listaDuenio[indice] = auxDuenio;
 
 				todoOk =1;
+				showMessage("\nALTA DE DUENIO EXITOSA!\n");
 			}
 		}
 		else
@@ -205,7 +208,11 @@ int hardcodeoDuenio(eDuenio lista[],int tam,int* pId,int cant)
 			{0000,"ROCCO","BESSIO",'M',0},
 			{0000,"MARIANA","SINNESS",'F',0},
 			{0000,"PABLO","KLOPP",'M',0},
-			{0000,"DIEGO","TE",'M',0}
+			{0000,"DIEGO","TE",'M',0},
+			{0000,"ESTEBAN","QUITO",'M',0},
+			{0000,"AGUSTINA","REINOSO",'F',0},
+			{0000,"ESTER","MENDOZA",'F',0},
+			{0000,"GRETA","FLEET",'F',0},
 
 	};//ID NOM APE SEX EMP
 
@@ -230,7 +237,7 @@ int cargarVectorNombreDuenio(eDuenio listaDuenio[],int tam,int id, char descripc
 	int todoOk =-1;
 
 	int indice;
-	//ACA SE LLAMA A BUSCAR: Y SE PASA EL INDICE
+	//ACA SE LLAMA A BUSCAR: Y SE PASA EL INDICE PARA CARGAR EL NOMBRE DEL DUENIO DONDE LO NECESITE INFORMAR
 	buscarReferenciaDuenio(listaDuenio, tam, &indice,id);
 
 	if(listaDuenio!=NULL && tam>0 && descripcion!=NULL && indice!=-1)
