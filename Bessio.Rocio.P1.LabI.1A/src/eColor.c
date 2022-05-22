@@ -13,16 +13,16 @@ int listarColor(eColor vec[],int tam)
 	{
 		printf("\n\n");
 		//ACA SE PUEDE HACER UNA TABLITA O LISTA
-		printf("\n------------------|");
-		printf("\nLISTA DE COLORES  |\n");
-		printf("------------------|\n");
-		printf("ID    |DESCRIPCION|");
-		printf("\n------------------|\n");
+		printf("\n|------------------|");
+		printf("\n| LISTA DE COLORES |\n");
+		printf("|------------------|\n");
+		printf("| ID   |DESCRIPCION|");
+		printf("\n|------------------|\n");
 		for(int i=0;i<tam;i++)
 		{
-			printf(" %d | %10s|\n",vec[i].idColor, vec[i].descripcion);
+			printf("| %d | %10s|\n",vec[i].idColor, vec[i].descripcion);
 		}
-		printf("------------------|\n");
+		printf("|------------------|\n");
 		todoOk = 0;
 	}
 	return todoOk;

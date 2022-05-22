@@ -181,6 +181,7 @@ int main(void) {
 			break;
 			case 10:
 				altaDuenio(listaDuenio, TAM_DUE, &idDuenio);
+				showMessage("\nALTA DE DUENIO EXITOSA!\n");
 				system("Pause");
 			break;
 			case 11:

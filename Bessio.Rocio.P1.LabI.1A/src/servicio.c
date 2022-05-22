@@ -15,16 +15,16 @@ int listarServicio(eServicio vecServicio[],int tam)
 	{
 		printf("\n\n");
 		//ACA SE PUEDE HACER UNA TABLITA O LISTA
-		printf("\n----------------------------------------|");
-		printf("\n        LISTA SERVICIOS                 |\n");
-		printf("----------------------------------------|\n");
-		printf(" ID    |  DESCRIPCION          | PRECIO |");
-		printf("\n----------------------------------------|\n");
+		printf("\n|-----------------------------------------|");
+		printf("\n|            LISTA SERVICIOS              |\n");
+		printf("|-----------------------------------------|\n");
+		printf("| ID    |  DESCRIPCION          |  PRECIO |");
+		printf("\n|-----------------------------------------|\n");
 		for(int i=0;i<tam;i++)
 		{
-			printf(" %d |  %14s       | %.2f |\n",vecServicio[i].idServicio, vecServicio[i].descripcion,vecServicio[i].precio);
+			printf("| %d |  %14s       | $%.2f |\n",vecServicio[i].idServicio, vecServicio[i].descripcion,vecServicio[i].precio);
 		}
-		printf("----------------------------------------|\n");
+		printf("|-----------------------------------------|\n");
 		todoOk = 0;
 
 	}

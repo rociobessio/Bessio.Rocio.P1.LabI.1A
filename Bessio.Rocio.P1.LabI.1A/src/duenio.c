@@ -147,7 +147,7 @@ int altaDuenio(eDuenio listaDuenio[],int tam,int* pId)
 				//ENTRO Y CARGO
 
 
-				getValidString("\nINGRESE NOMBRE DEL DUENIO: ", "\nUNICAMENTE LETRAS: ", "\nRANGO INVALIDO REINTENTE. ", auxCad, 3, 24);
+				getValidString("INGRESE NOMBRE DEL DUENIO: ", "\nUNICAMENTE LETRAS: ", "\nRANGO INVALIDO REINTENTE. ", auxCad, 3, 24);
 				strupr(auxCad);
 				strcpy(auxDuenio.nombreDue,auxCad);
 

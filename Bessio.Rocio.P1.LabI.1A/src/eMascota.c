@@ -183,14 +183,14 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 		{
 			if(indice==-1)
 			{
-				showMessage("\nNO HAY MAS ESPACIO EN EL SISTEMA!");
+				showMessage("\nNO HAY MAS ESPACIO EN EL SISTEMA!\n");
 			}
 			else
 			{
 				auxMascota.id=*pId;
 				(*pId)++;
 				//ENTRO Y CARGO
-				getValidString("\nINGRESE NOMBRE DE LA MASCOTA: ", "\nERROR UNICAMENTE LETRAS: ", "\nINGRESE EN UN RANGO VALIDO: ", auxCad, 2, 20);
+				getValidString("INGRESE NOMBRE DE LA MASCOTA: ", "\nERROR UNICAMENTE LETRAS: ", "\nINGRESE EN UN RANGO VALIDO: ", auxCad, 2, 20);
 				strupr(auxCad);
 				strcpy(auxMascota.nombre,auxCad);
 
@@ -230,7 +230,7 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 		}
 		else
 		{
-			showMessage("\nOCURRIO UN PROBLEMA CON EL SISTEMA!!");
+			showMessage("\nOCURRIO UN PROBLEMA CON EL SISTEMA!!\n");
 		}
 	}
 	return todoOk;
@@ -332,7 +332,6 @@ int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tam
 				printf("|----------------------------------------------------------------------------------------|\n");
 				mostrarUnico(lista[indice], tam,colorMascota,tamColor,tipoLista,tamTipo,listaDuenio,tamDuenio);
 				printf("|----------------------------------------------------------------------------------------|\n");
-				printf("\n\n");
 				printf("____________________________");
 				printf("\n|A)TIPO                    |\n|"
 						"B)VACUNADO                |\n");
