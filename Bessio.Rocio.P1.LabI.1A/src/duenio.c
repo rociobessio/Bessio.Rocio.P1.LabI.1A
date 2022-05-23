@@ -28,28 +28,27 @@ int listarDuenios(eDuenio listaDuenio[],int tam)
 	{
 
 		printf("\n\n\n\n");
-		showMessage("|-------------------------------------------------------------------------|");
-		showMessage("|			 ***LISTADO DE DUENIOS***                         | ");
-		printf("|-------------------------------------------------------------------------|\n");
-		showMessage("|  ID    |	    NOMBRE      |	APELLIDO        |   SEXO          |");
-		printf("|-------------------------------------------------------------------------|\n");
+		printf("|-------------------------------------------------|\n");
+		showMessage("|	***LISTADO DE DUENIOS***                         | ");
+		printf("|-------------------------------------------------|\n");
+		showMessage("|  ID    |	    NOMBRE      |   SEXO          |");
+		printf("|-------------------------------------------------|\n");
 
 		for(int i = 0;i<tam;i++)
 		{
 			if(!listaDuenio[i].isEmpty)
 			{
-				printf("| %4d   |        %10s    |          %10s   |     %c           |\n",listaDuenio[i].idDuenio,
-																						listaDuenio[i].nombreDue,
-																						listaDuenio[i].apellidoDue,
-																						listaDuenio[i].sexo);
+				printf("| %4d   |        %10s    |     %c           |\n",listaDuenio[i].idDuenio,
+																		listaDuenio[i].nombreDue,
+																		listaDuenio[i].sexo);
 				bandera=1;
 			}
 		}
 		if(bandera==0)
 		{
-			showMessage("|                 NO HAY DUENIOS EN EL SISTEMA                            |");
+			showMessage("|      NO HAY DUENIOS EN EL SISTEMA      |");
 		}
-		printf("|-------------------------------------------------------------------------|\n");
+		printf("|-------------------------------------------------|\n");
 
 
 		todoOk = 0;
@@ -150,11 +149,6 @@ int altaDuenio(eDuenio listaDuenio[],int tam,int* pId)
 				strupr(auxCad);
 				strcpy(auxDuenio.nombreDue,auxCad);
 
-				//APELLIDO
-				getValidString("\nINGRESE APELLIDO DEL DUENIO: ", "\nUNICAMENTE LETRAS: ", "\nRANGO INVALIDO REINTENTE. ", auxCad, 3, 24);
-				strupr(auxCad);
-				strcpy(auxDuenio.apellidoDue,auxCad);
-
 				//SEXO
 				printf("\nINGRESA SEXO DEL DUENIO (F/M): ");
 				fflush(stdin);
@@ -200,18 +194,18 @@ int hardcodeoDuenio(eDuenio lista[],int tam,int* pId,int cant)
 	int todoOk = -1;
 
 	eDuenio auxHarcodeo [] = {
-			{0000,"MARIA","ESTEVANEZ",'F',0},
-			{0000,"JUANA","REPETTO",'F',0},
-			{0000,"MARTIN","GONZALES",'M',0},
-			{0000,"MARCOS","ACUNIA",'M',0},
-			{0000,"ROCCO","BESSIO",'M',0},
-			{0000,"MARIANA","SINNESS",'F',0},
-			{0000,"PABLO","KLOPP",'M',0},
-			{0000,"DIEGO","TE",'M',0},
-			{0000,"ESTEBAN","QUITO",'M',0},
-			{0000,"AGUSTINA","REINOSO",'F',0},
-			{0000,"ESTER","MENDOZA",'F',0},
-			{0000,"GRETA","FLEET",'F',0},
+			{0000,"MARIA",'F',0},
+			{0000,"JUANA",'F',0},
+			{0000,"MARTIN",'M',0},
+			{0000,"MARCOS",'M',0},
+			{0000,"ROCCO",'M',0},
+			{0000,"MARIANA",'F',0},
+			{0000,"PABLO",'M',0},
+			{0000,"DIEGO",'M',0},
+			{0000,"ESTEBAN",'M',0},
+			{0000,"AGUSTINA",'F',0},
+			{0000,"ESTER",'F',0},
+			{0000,"GRETA",'F',0},
 
 	};//ID NOM APE SEX EMP
 

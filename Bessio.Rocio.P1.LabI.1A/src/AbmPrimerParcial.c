@@ -260,16 +260,16 @@ int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo ti
 		printf("\n       INFORMES    VETERINARIA    MASCOTAS                  |\n");
 		printf("____________________________________________________________|\n");
 		printf("____________________________");
-		printf("\n|1)                        |\n|"
-				"2)                        |\n|"
-				"3)                        |\n|"
-				"4)                        |\n|"
-				"5)                        |\n|"
-				"6)                        |\n|"
-				"7)                        |\n|"
-				"8)                        |\n|"
-				"9)                        |\n|"
-				"10)                       |\n|"
+		printf("\n|1)COLOR SELECCIONADO      |\n|"
+				"2)PROMEDIO VACUNADAS      |\n|"//ESTA
+				"3)LA/LAS MENOR EDAD       |\n|"//ESTA
+				"4)SEPARADAS POR TIPO      |\n|"
+				"5)CUANTAS DE COLOR Y TIPO |\n|"
+				"6)COLOR MAS ELEGIDO       |\n|"
+				"7)TRABAJOS A MASCOTA      |\n|"
+				"8)SUMA DE IMPORTES        |\n|"
+				"9)SERVICIO Y FECHA        |\n|"
+				"10)FECHA ELEGIDA          |\n|"
 				"11)SALIR                  |\n");
 		printf("|__________________________|\n");
 		getValidInt("INGRESE UN NUMERO: ", "\nERROR, REINGRESE UN NUMERO VALIDO.", "\nUNICAMENTE NUMEROS.", 1, 11, &opcion);
@@ -277,43 +277,44 @@ int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo ti
 		switch(opcion)
 		{
 			case 1:
-
+				informeColorSeleccionado(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 2:
-
+				//PROMEDIO VACUNA
+				informeMascotaPromedioVacunadas(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 3:
-
+				informeMascotaMenorEdad(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 4:
-
+				informeMascotasXTipo(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 5:
-
+				informeCantidadColorYTipo(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 6:
-
+				informeMasCantidadColor(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 7:
-
+				informeTrabajoRealizadoMascota(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 8:
-
+				informeImporteTrabajoMascota(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 9:
-
+				informeTrabajoFecha(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 10:
-
+				informeFechaEspecificaYServicio(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;
 			case 11:

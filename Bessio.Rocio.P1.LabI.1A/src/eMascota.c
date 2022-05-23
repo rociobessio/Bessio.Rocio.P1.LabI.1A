@@ -168,7 +168,7 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 
 	eMascota auxMascota;
 
-	if(lista!=NULL && tam>0 && pId!=NULL && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0)
+	if(lista!=NULL && tam>0 && pId!=NULL && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0 && listaDuenio!=NULL && tamDuenio>0)
 	{
 		printf("\n____________________________________________________________");
 		printf("\n                                                            |");

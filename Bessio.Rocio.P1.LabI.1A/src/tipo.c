@@ -12,7 +12,6 @@ int listarTipoMascota(eTipo vec[],int tam)
 
 	if(vec!=NULL && tam>0)
 	{
-		printf("\n\n");
 		//ACA SE PUEDE HACER UNA TABLITA O LISTA
 		printf("\n|------------------|");
 		printf("\n|   TIPO MASCOTA   |\n");

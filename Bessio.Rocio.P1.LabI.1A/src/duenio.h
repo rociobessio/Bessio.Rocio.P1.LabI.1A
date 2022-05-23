@@ -8,7 +8,7 @@ typedef struct{
 	int idDuenio;
 
 	char nombreDue[25];
-	char apellidoDue[25];
+
 	char sexo;
 	int isEmpty;
 
