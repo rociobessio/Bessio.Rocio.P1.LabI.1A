@@ -14,7 +14,7 @@
 #include "trabajo.h"
 #include "cliente.h"
 
-
+//1
 int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
@@ -82,6 +82,12 @@ int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota
 		printf("\n      INFORME PROMEDIO MASCOTAS VACUNADAS                   |\n");
 		printf("____________________________________________________________|\n");
 		//RECORRER LISTA E IR SUMANDO PARA EL TOTAL, DESPUES IF DESCARTA SI ESTA VACUNADO Y AHI CUENTO LUEGO DVIDO EL TOTAL DE MASC X VACUNADOS
+		printf("\n\n");
+		showMessage("|----------------------------------------------------------------------------------------|");
+		showMessage("|			         ***LISTADO DE MASCOTAS***                               | ");
+		printf("|----------------------------------------------------------------------------------------|\n");
+		showMessage("|  ID |	 NOMBRE    |	TIPO        |   COLOR  |      VACUNADO   | EDAD   | NOM.DUENIO   |");
+		printf("|----------------------------------------------------------------------------------------|\n");
 		for(int i=0;i<tam;i++)
 		{
 			if(!lista[i].isEmpty)
@@ -89,11 +95,14 @@ int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota
 				totalMascotas++;
 				if(lista[i].vacunado == 'S')
 				{
+					mostrarUnico(lista[i], tam, colorMascota, tamColor, tipoLista, tamTipo, listaDuenio, tamDuenio);//IMPRIMO LISTA EN J
 					contadorVacunadas++;
 					bandera++;
 				}
 			}
 		}
+		printf("|----------------------------------------------------------------------------------------|\n");
+
 		promedio =(float) totalMascotas/contadorVacunadas;
 		if(bandera==0)
 		{
@@ -109,7 +118,7 @@ int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota
 	return todoOk;
 }
 
-
+//4
 int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
@@ -153,6 +162,7 @@ int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamC
 	return todoOk;
 }
 
+//5
 int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
@@ -182,21 +192,29 @@ int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int
 		{
 			getValidInt("\nERROR, INGRESE LA MARCA A INFORMAR: ", "\nVALOR INVALIDO REINTENTE: ", "\nUNICAMENTE NUMEROS: ", 1000, 1004, &opcionTipo);
 		}
-
+		printf("\n\n");
+		showMessage("|----------------------------------------------------------------------------------------|");
+		showMessage("|			         ***LISTADO DE MASCOTAS***                               | ");
+		printf("|----------------------------------------------------------------------------------------|\n");
+		showMessage("|  ID |	 NOMBRE    |	TIPO        |   COLOR  |      VACUNADO   | EDAD   | NOM.DUENIO   |");
+		printf("|----------------------------------------------------------------------------------------|\n");
 		for(int i=0;i<tam;i++)
 		{
 			if(!lista[i].isEmpty && lista[i].idColor==opcionColor && lista[i].idTipo==opcionTipo)
 			{
+				mostrarUnico(lista[i], tam, colorMascota, tamColor, tipoLista, tamTipo, listaDuenio, tamDuenio);
 				contador++;
 				bandera=1;
 			}
 		}
 		if(bandera==0)
 		{
-			printf("\nNO HAY MASCOTAS REGISTRADOS CON ESE COLOR y ESE TIPO\n");
+			printf("|           NO HAY MASCOTAS REGISTRADAS CON ESE COLOR y ESE TIPO                         |\n");
+			printf("|----------------------------------------------------------------------------------------|\n");
 		}
 		else
 		{
+			printf("|----------------------------------------------------------------------------------------|\n");
 			printf("\nLA CANTIDAD DE MASCOTAS CON ESE COLOR y ESE TIPO ES DE: %d MASCOTAS\n",contador);
 		}
 
@@ -205,6 +223,7 @@ int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int
 	return todoOk;
 }
 
+//6
 int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
@@ -260,6 +279,7 @@ int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int t
 	return todoOk;
 }
 
+//7
 int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
@@ -317,6 +337,7 @@ int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[
 	return todoOk;
 }
 
+//8
 int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
