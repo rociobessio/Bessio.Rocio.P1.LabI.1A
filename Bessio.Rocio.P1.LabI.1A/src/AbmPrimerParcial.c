@@ -6,6 +6,8 @@
  Fecha Part. 1 : 11/05/22
  Fecha Part. 2 : 23/05/22
  Tema          : MASCOTAS
+
+ - NO PODRA ENTRAR A CIERTOS APARTADOS SALVO QUE DE ALTA O MUESTRE LA LISTA CON LOS HARDCODEADOS
  ============================================================================
  */
 
@@ -101,6 +103,7 @@ int main(void) {
 	hardcodeoDuenio(listaDuenio, TAM_DUE, &idDuenio, 7);
 
 
+
 	do
 	{
 		switch(menu())
@@ -142,19 +145,23 @@ int main(void) {
 				system("Pause");
 			break;
 			case 'D':
+				//LISTAR
 				sortByTipoYNombre(lista, TAM, &idInicial, colorLista, TAM_COLOR, tipoLista, TAM_TIPO,listaDuenio,TAM_DUE);
 				banderaAlta=0;
 				system("Pause");
 			break;
 			case 'E':
+				//LISTAR TIPO
 				listarTipoMascota(tipoLista, TAM_TIPO);
 				system("Pause");
 			break;
 			case 'F':
+				//LISTAR COLOR
 				listarColor(colorLista, TAM_COLOR);
 				system("Pause");
 			break;
 			case 'G':
+				//LISTAR SERVICIOS
 				listarServicio(servicioLista, TAM_SERV);
 				system("Pause");
 			break;
@@ -174,7 +181,7 @@ int main(void) {
 				//LISTAR TRABAJO
 				if(banderaAlta==1)
 				{
-					printf("\nNO SE PUEDE LISTAR NO SE DIO DE ALTA AUN!\n");
+					printf("\nNO SE PUEDE LISTAR TRABAJOS SI NO SE DIO DE ALTA AUN!\n");
 				}
 				else
 				{
@@ -183,17 +190,29 @@ int main(void) {
 				system("Pause");
 			break;
 			case 'J':
+				//ALTA DUENIO
 				altaDuenio(listaDuenio, TAM_DUE, &idDuenio);
 				system("Pause");
 			break;
 			case 'K':
+				//LISTAR DUENIOS
 				listarDuenios(listaDuenio, TAM_DUE);
 				system("Pause");
 			break;
 			case 'L':
-				submenu(lista, TAM, colorLista, TAM_COLOR, tipoLista, TAM_TIPO, fecha, servicioLista, TAM_SERV, trabajoLista, TAM_TRAB,listaDuenio,TAM_DUE);
+				//SUBMENU INFORMES
+				if(banderaAlta==1)
+				{
+					printf("\nNO SE PUEDE INFORMAR SI NO SE DIO DE ALTA!\n");
+					system("Pause");
+				}
+				else
+				{
+					submenu(lista, TAM, colorLista, TAM_COLOR, tipoLista, TAM_TIPO, fecha, servicioLista, TAM_SERV, trabajoLista, TAM_TRAB,listaDuenio,TAM_DUE);
+				}
 			break;
 			case 'S':
+				//SALIR
 				getUserConfirmation(&salir, "\nDESEA FINALIZAR EL PROGRAMA (S/N)?", "\nERROR, INGRESE UN VALOR VALIDO (S/N): ");
 				if(salir=='s')
 				{
@@ -283,7 +302,6 @@ int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo ti
 				system("Pause");
 			break;
 			case 2:
-				//PROMEDIO VACUNA
 				informeMascotaPromedioVacunadas(lista, tam, colorMascota, tamColor, tipoLista, tamTipo, fecha, servicioLista, tamServicio, listaTrabajo, tamTrabajo, listaDuenio, tamDuenio);
 				system("Pause");
 			break;

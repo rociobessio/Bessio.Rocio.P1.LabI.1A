@@ -428,11 +428,11 @@ int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamCo
 					cargarServicio(servicioLista, tamServicio, listaTrabajo[i].idServicio, descripcion);
 					cargarNombreMascota(lista, tam, listaTrabajo[j].idMascota, descripcionNombre);
 					printf("|%6d       |   %15s        |      %10s                     |        %02d/%02d/%02d        |\n",listaTrabajo[j].idTrabajo,
-																																descripcion,
-																																descripcionNombre,
-																																listaTrabajo[j].fechaTrabajo.dia,//SIEMPRE EN LA POSICION i SI NO PISA DATOS
-																																listaTrabajo[j].fechaTrabajo.mes,
-																																listaTrabajo[j].fechaTrabajo.anio);
+																															descripcion,
+																															descripcionNombre,
+																															listaTrabajo[j].fechaTrabajo.dia,//SIEMPRE EN LA POSICION i SI NO PISA DATOS
+																															listaTrabajo[j].fechaTrabajo.mes,
+																															listaTrabajo[j].fechaTrabajo.anio);
 				bandera++;
 				}
 			}
