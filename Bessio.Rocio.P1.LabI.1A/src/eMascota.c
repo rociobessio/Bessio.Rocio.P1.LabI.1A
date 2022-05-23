@@ -13,8 +13,6 @@
 #include "duenio.h"
 
 
-
-
 int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
 {
 	int todoOk =-1;
@@ -39,7 +37,6 @@ int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo
 																					   descricionNomDuenio);
 		todoOk = 1;
 	}
-
 	return todoOk;
 }
 
@@ -83,7 +80,6 @@ int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tip
 int inicializarEstructura(eMascota lista[],int tam)
 {
 	int todoOk = -1;
-
 	if(lista!=NULL && tam>0)
 	{
 		for(int i=0;i<tam;i++)
@@ -171,7 +167,6 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 	char confirmacion;
 
 	eMascota auxMascota;
-
 
 	if(lista!=NULL && tam>0 && pId!=NULL && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0)
 	{

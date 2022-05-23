@@ -110,7 +110,6 @@ int buscarReferenciaDuenio(eDuenio listaDuenio[],int tam,int* pIndex,int id)
 				*pIndex = i;
 				break;
 			}
-
 		}
 		todoOk = 1;
 	}
@@ -227,8 +226,6 @@ int hardcodeoDuenio(eDuenio lista[],int tam,int* pId,int cant)
 		}
 		todoOk = 0;
 	}
-
-
 	return todoOk;
 }
 

@@ -1,10 +1,11 @@
 /*
  ============================================================================
- Name        : AbmPrimerParcial.c
- Author      : Bessio Rocio
- Division    : 1-A
- Fecha       : 11/05/22
- Tema        : MASCOTAS
+ Name          : AbmPrimerParcial.c
+ Author        : Bessio Rocio
+ Division      : 1-A
+ Fecha Part. 1 : 11/05/22
+ Fecha Part. 2 : 23/05/22
+ Tema          : MASCOTAS
  ============================================================================
  */
 
@@ -24,6 +25,7 @@
 
 #include "duenio.h"
 #include "harcodeo.h"
+#include "informes.h"
 
 
 int menu();
@@ -92,7 +94,6 @@ int main(void) {
 	inicializarEstructuraDuenio(listaDuenio, TAM_DUE);
 
 	//HARDCODEOS
-//	hardcodeo(lista, TAM, &idInicial, 6);
 	harcodearMascotas(lista, TAM, 7, &idInicial);
 	hardcodeoTrabajo(trabajoLista, TAM_TRAB, &idTrabajoRandom, 6);
 	hardcodeoDuenio(listaDuenio, TAM_DUE, &idDuenio, 7);
@@ -243,8 +244,6 @@ int menu()
 		scanf("%c",&opcion);
 		opcion = toupper(opcion);
 	}
-
-
 	return opcion;
 }
 
