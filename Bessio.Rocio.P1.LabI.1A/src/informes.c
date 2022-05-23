@@ -274,8 +274,6 @@ int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int t
 
 		todoOk=0;
 	}
-
-
 	return todoOk;
 }
 
@@ -398,6 +396,7 @@ int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamCo
 	int idBuscada;
 	char descripcion[20];
 	int bandera=0;
+	char descripcionNombre[20];
 
 
 	if(lista!=NULL && tam>0 && colorMascota!=NULL && tamColor>0 && tipoLista!=NULL && tamTipo>0 && listaDuenio!=NULL && tamDuenio>0 && servicioLista!=NULL && tamServicio>0 && listaTrabajo!=NULL && tamTrabajo>0)
@@ -420,23 +419,28 @@ int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamCo
 		showMessage("|---------------------------------------------------------------------------------------------------------|");
 		showMessage("|  ID TRABAJO |	         SERVICIO        |	      ID. MASCOTA              |       FECHA SERVICIO     |");
 		printf("|---------------------------------------------------------------------------------------------------------|\n");
-		for(int i=0;i<tamTrabajo;i++)
+		for(int i=0;i<tamServicio;i++)
 		{
-			if(!lista[i].isEmpty && !listaTrabajo[i].isEmpty  && listaTrabajo[i].idServicio == idBuscada)
+			for(int j=0;j<tamTrabajo;j++)
 			{
-				cargarServicio(servicioLista, tamServicio, listaTrabajo[i].idServicio, descripcion);
-				printf("|%6d       |   %15s        |      %4d                           |        %02d/%02d/%02d        |\n",listaTrabajo[i].idTrabajo,
-																															descripcion,
-																															listaTrabajo->idMascota,
-																															listaTrabajo[i].fechaTrabajo.dia,//SIEMPRE EN LA POSICION i SI NO PISA DATOS
-																															listaTrabajo[i].fechaTrabajo.mes,
-																															listaTrabajo[i].fechaTrabajo.anio);
-			bandera++;
+				if(!lista[j].isEmpty && !listaTrabajo[j].isEmpty  && listaTrabajo[j].idServicio == idBuscada && listaTrabajo[j].idServicio == servicioLista[i].idServicio)
+				{
+					cargarServicio(servicioLista, tamServicio, listaTrabajo[i].idServicio, descripcion);
+					cargarNombreMascota(lista, tam, listaTrabajo[j].idMascota, descripcionNombre);
+					printf("|%6d       |   %15s        |      %10s                     |        %02d/%02d/%02d        |\n",listaTrabajo[j].idTrabajo,
+																																descripcion,
+																																descripcionNombre,
+																																listaTrabajo[j].fechaTrabajo.dia,//SIEMPRE EN LA POSICION i SI NO PISA DATOS
+																																listaTrabajo[j].fechaTrabajo.mes,
+																																listaTrabajo[j].fechaTrabajo.anio);
+				bandera++;
+				}
 			}
+
 		}
 	    if(bandera==0)
 	    {
-	       printf("|    NO SE REALIZO EL SERVICIO %s!       |\n",descripcion);
+	       printf("|                    NO SE REALIZO EL SERVICIO %s!                                      \n",descripcion);
 	    }
 		printf("|---------------------------------------------------------------------------------------------------------|\n");
 
