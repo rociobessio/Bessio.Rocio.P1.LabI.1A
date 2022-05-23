@@ -52,7 +52,7 @@ int buscarReferenciaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIndex,i
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int altaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIdTrab,eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eServicio listaServicio[],int tamServ,eDuenio listaDuenio[],int tamDuenio);
+int altaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIdTrab,eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eServicio listaServicio[],int tamServ,eCliente listaDuenio[],int tamDuenio);
 ///@brief	LISTA TODO EL ARRAY DE TRABAJO
 ///@param listaTrabajo [] eTrabajo array
 ///@param tamTrabajo int tamanio del array

@@ -3,7 +3,7 @@
 #include "eFecha.h"
 #include "eColor.h"
 #include "tipo.h"
-#include "duenio.h"
+#include "cliente.h"
 
 #ifndef EESTRUCTURA_H_
 #define EESTRUCTURA_H_
@@ -60,7 +60,7 @@ int buscarReferencia(eMascota lista[],int tam,int* pIndex,int id);
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio,int* pIdDuenio);
+int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio,int* pIdDuenio);
 
 ///@brief	DA DE BAJA  Y CAMBIA EL ISEMPTY A 1
 ///@param lista [] eMascota array
@@ -71,7 +71,7 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio);
+int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	SE MODIFICA ALGUN CAMPO DE LA ESTRUCTURA BUSCANDO SU ID
 ///@param lista [] eMascota array
@@ -82,7 +82,7 @@ int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio);
+int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	HARCODEO PARA FACILITAR LAS COSAS LA IDEA ES NO PERDER TIEMPO ES PARA TESTING
 ///@param lista [] eMascota array
@@ -104,7 +104,7 @@ int cargarNombreMascota(eMascota vec[],int tam,int id, char descripcion[]);
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio);
+int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	MUESTRA EL CONTENIDO DE UNA POSICION DE LA ESTRUCTURA
 ///@param lista [] eMascota array
@@ -114,7 +114,7 @@ int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tip
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio);
+int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	HACE UN SORT POR TIPO DE MASCOTA Y NOMBRE DE ESTA
 ///@param lista [] eMascota array
@@ -124,5 +124,5 @@ int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int sortByTipoYNombre(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio);
+int sortByTipoYNombre(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio);
 

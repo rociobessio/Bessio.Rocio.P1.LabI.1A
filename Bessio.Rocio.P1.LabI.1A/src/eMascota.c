@@ -10,10 +10,10 @@
 #include"eFecha.h"
 #include "eColor.h"
 #include "tipo.h"
-#include "duenio.h"
+#include "cliente.h"
 
 
-int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
+int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk =-1;
 
@@ -41,7 +41,7 @@ int mostrarUnico(eMascota lista,int tam,eColor colorMascota[],int tamColor,eTipo
 }
 
 
-int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
+int listar(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -154,7 +154,7 @@ int cargarNombreMascota(eMascota vec[],int tam,int id, char descripcion[])
 }
 
 
-int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio,int* pIdDuenio)
+int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio,int* pIdDuenio)
 {
 	int todoOk = 0;
 
@@ -252,7 +252,7 @@ int alta(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 	return todoOk;
 }
 
-int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
+int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk;
 
@@ -306,7 +306,7 @@ int baja(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eT
 	return todoOk;
 }
 
-int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
+int modificacion(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk;
 
@@ -428,7 +428,7 @@ int hardcodeo(eMascota lista[],int tam,int* pId,int cant)
 	return todoOk;
 }
 
-int sortByTipoYNombre(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eDuenio listaDuenio[],int tamDuenio)
+int sortByTipoYNombre(eMascota lista[],int tam,int* pId,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 	eMascota auxMascota;

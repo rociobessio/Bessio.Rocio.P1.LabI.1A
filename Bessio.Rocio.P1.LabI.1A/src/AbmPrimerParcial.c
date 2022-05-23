@@ -23,14 +23,16 @@
 #include "servicio.h"
 
 
-#include "duenio.h"
+#include "cliente.h"
 #include "harcodeo.h"
 #include "informes.h"
 
 
+
+
 int menu();
 
-int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 #define TAM 15 //TAM MASCOTAS
 
@@ -76,7 +78,7 @@ int main(void) {
 
 	eTrabajo trabajoLista[TAM_TRAB];
 
-	eDuenio listaDuenio[TAM_DUE];
+	eCliente listaDuenio[TAM_DUE];
 
 	eFecha fecha;
 
@@ -247,7 +249,7 @@ int menu()
 	return opcion;
 }
 
-int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk =-1;
 	int opcion;
@@ -261,8 +263,8 @@ int submenu(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo ti
 		printf("____________________________________________________________|\n");
 		printf("____________________________");
 		printf("\n|1)COLOR SELECCIONADO      |\n|"
-				"2)PROMEDIO VACUNADAS      |\n|"//ESTA
-				"3)LA/LAS MENOR EDAD       |\n|"//ESTA
+				"2)PROMEDIO VACUNADAS      |\n|"
+				"3)LA/LAS MENOR EDAD       |\n|"
 				"4)SEPARADAS POR TIPO      |\n|"
 				"5)CUANTAS DE COLOR Y TIPO |\n|"
 				"6)COLOR MAS ELEGIDO       |\n|"

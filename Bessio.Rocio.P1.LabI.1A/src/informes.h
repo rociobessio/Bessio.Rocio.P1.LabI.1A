@@ -1,7 +1,7 @@
 #include "eFecha.h"
 #include "eColor.h"
 #include "tipo.h"
-#include "duenio.h"
+#include "cliente.h"
 #include "eMascota.h"
 #include "servicio.h"
 #include "trabajo.h"
@@ -24,7 +24,7 @@
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 
 ///@brief	PROMEDIO MASCOTAS VACUNADAS
@@ -35,7 +35,7 @@ int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int 
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	INFORMA LAS MASCOTAS DE MENOR EDAD
 ///@param lista [] eEstructura array
@@ -45,7 +45,7 @@ int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeMascotaMenorEdad(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeMascotaMenorEdad(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	IMPRIME TODAS LAS MASCOTAS QUE HAY EN CADA TIPO
 ///@param lista [] eMascota array
@@ -55,7 +55,7 @@ int informeMascotaMenorEdad(eMascota lista[],int tam,eColor colorMascota[],int t
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	CUENTA LA CANTIDAD DE MASCOTAS DE UN TIPO Y COLOR SELECCIONADOS
 ///@param lista [] eEstructura array
@@ -65,7 +65,7 @@ int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamC
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	CUENTA CUAL ES EL TIPO DE MASCOTA QUE MAS HAY/FUE MAS ELEGIDA
 ///@param lista [] eMascota array
@@ -75,7 +75,7 @@ int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 ///@brief	IMPRIME LOS TRABAJOS REALIZADOS A UNA MASCOTA
 ///@param lista [] eMascota array
 ///@param tam int tamanio del array
@@ -84,7 +84,7 @@ int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int t
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief	IMPRIME EL PRECIO TOTAL DE TODOS LOS SERVICIOS REALIZADOS A LA MASCOTA
 ///@param lista [] eMascota array
@@ -94,7 +94,7 @@ int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief PIDE UN SERVICIO Y MUESTRA A LOS AUTOS QUE SE LES REALIZO EL SERVICIO Y LA FECHA
 ///@param lista [] eMascota array
@@ -104,7 +104,7 @@ int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);
 
 ///@brief PIDE UNA FECHA Y MUESTRA TODOS LOS SERVICIOS REALIZADOS ESE DIA
 ///@param lista [] eMascota array
@@ -114,4 +114,4 @@ int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamCo
 ///@param tipoLista eTipo[] array de tipos de mascotas
 ///@param tamTipo int tamanio del array de tipo de mascotas
 ///@return int 1 si los parametros son valios o 0 si Invalido
-int informeFechaEspecificaYServicio(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio);
+int informeFechaEspecificaYServicio(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio);

@@ -3,18 +3,19 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+
 ///MIS BIBLIOTECAS
 #include "eFecha.h"
 #include "eColor.h"
 #include "tipo.h"
-#include "duenio.h"
 #include "eMascota.h"
 #include "servicio.h"
 #include "utn.h"
 #include "trabajo.h"
+#include "cliente.h"
 
 
-int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -63,7 +64,7 @@ int informeColorSeleccionado(eMascota lista[],int tam,eColor colorMascota[],int 
 }
 
 //2
-int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -109,7 +110,7 @@ int informeMascotaPromedioVacunadas(eMascota lista[],int tam,eColor colorMascota
 }
 
 
-int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -152,7 +153,7 @@ int informeMascotasXTipo(eMascota lista[],int tam,eColor colorMascota[],int tamC
 	return todoOk;
 }
 
-int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -204,7 +205,7 @@ int informeCantidadColorYTipo(eMascota lista[],int tam,eColor colorMascota[],int
 	return todoOk;
 }
 
-int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -259,7 +260,7 @@ int informeMasCantidadColor(eMascota lista[],int tam,eColor colorMascota[],int t
 	return todoOk;
 }
 
-int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -316,7 +317,7 @@ int informeTrabajoRealizadoMascota(eMascota lista[],int tam,eColor colorMascota[
 	return todoOk;
 }
 
-int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -369,7 +370,7 @@ int informeImporteTrabajoMascota(eMascota lista[],int tam,eColor colorMascota[],
 }
 
 //9
-int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -425,7 +426,7 @@ int informeTrabajoFecha(eMascota lista[],int tam,eColor colorMascota[],int tamCo
 }
 
 //10
-int informeFechaEspecificaYServicio(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeFechaEspecificaYServicio(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
@@ -490,7 +491,7 @@ int informeFechaEspecificaYServicio(eMascota lista[],int tam,eColor colorMascota
 	return todoOk;
 }
 //3
-int informeMascotaMenorEdad(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eDuenio listaDuenio[],int tamDuenio)
+int informeMascotaMenorEdad(eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eFecha fecha,eServicio servicioLista[],int tamServicio,eTrabajo listaTrabajo[],int tamTrabajo,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 

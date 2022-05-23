@@ -12,7 +12,7 @@
 #include "servicio.h"
 
 
-#include "duenio.h"
+#include "cliente.h"
 #include "harcodeo.h"
 
 int tiposIds[10]={

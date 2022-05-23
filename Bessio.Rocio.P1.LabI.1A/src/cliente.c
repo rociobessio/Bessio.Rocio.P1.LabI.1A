@@ -14,11 +14,11 @@
 #include "servicio.h"
 
 
-#include "duenio.h"
+#include "cliente.h"
 
 
 
-int listarDuenios(eDuenio listaDuenio[],int tam)
+int listarDuenios(eCliente listaDuenio[],int tam)
 {
 	int todoOk = -1;
 
@@ -29,7 +29,7 @@ int listarDuenios(eDuenio listaDuenio[],int tam)
 
 		printf("\n\n\n\n");
 		printf("|-------------------------------------------------|\n");
-		showMessage("|	***LISTADO DE DUENIOS***                         | ");
+		showMessage("|	***LISTADO DE DUENIOS***                  | ");
 		printf("|-------------------------------------------------|\n");
 		showMessage("|  ID    |	    NOMBRE      |   SEXO          |");
 		printf("|-------------------------------------------------|\n");
@@ -58,7 +58,7 @@ int listarDuenios(eDuenio listaDuenio[],int tam)
 
 
 
-int inicializarEstructuraDuenio(eDuenio listaDuenio[],int tam)
+int inicializarEstructuraDuenio(eCliente listaDuenio[],int tam)
 {
 	int todoOk = -1;
 
@@ -75,7 +75,7 @@ int inicializarEstructuraDuenio(eDuenio listaDuenio[],int tam)
 }
 
 
-int buscarLibreDuenio(eDuenio listaDuenio[],int tam,int* pIndex)
+int buscarLibreDuenio(eCliente listaDuenio[],int tam,int* pIndex)
 {
 	int todoOk = -1;
 
@@ -95,7 +95,7 @@ int buscarLibreDuenio(eDuenio listaDuenio[],int tam,int* pIndex)
 	return todoOk;
 }
 
-int buscarReferenciaDuenio(eDuenio listaDuenio[],int tam,int* pIndex,int id)
+int buscarReferenciaDuenio(eCliente listaDuenio[],int tam,int* pIndex,int id)
 {
 	int todoOk = -1;
 
@@ -115,13 +115,13 @@ int buscarReferenciaDuenio(eDuenio listaDuenio[],int tam,int* pIndex,int id)
 	return todoOk;
 }
 
-int altaDuenio(eDuenio listaDuenio[],int tam,int* pId)
+int altaDuenio(eCliente listaDuenio[],int tam,int* pId)
 {
 	int todoOk = -1;
 
 	int indice;
 
-	eDuenio auxDuenio;
+	eCliente auxDuenio;
 
 	char auxCad[25];
 	char auxChar;
@@ -189,11 +189,11 @@ int altaDuenio(eDuenio listaDuenio[],int tam,int* pId)
 
 
 
-int hardcodeoDuenio(eDuenio lista[],int tam,int* pId,int cant)
+int hardcodeoDuenio(eCliente lista[],int tam,int* pId,int cant)
 {
 	int todoOk = -1;
 
-	eDuenio auxHarcodeo [] = {
+	eCliente auxHarcodeo [] = {
 			{0000,"MARIA",'F',0},
 			{0000,"JUANA",'F',0},
 			{0000,"MARTIN",'M',0},
@@ -223,7 +223,7 @@ int hardcodeoDuenio(eDuenio lista[],int tam,int* pId,int cant)
 	return todoOk;
 }
 
-int cargarVectorNombreDuenio(eDuenio listaDuenio[],int tam,int id, char descripcion[])
+int cargarVectorNombreDuenio(eCliente listaDuenio[],int tam,int id, char descripcion[])
 {
 	int todoOk =-1;
 

@@ -12,6 +12,7 @@
 
 #include "trabajo.h"
 #include "servicio.h"
+#include "cliente.h"
 
 
 
@@ -72,7 +73,7 @@ int buscarReferenciaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIndex,i
 	return todoOk;
 }
 
-int altaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIdTrab,eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eServicio listaServicio[],int tamServ,eDuenio listaDuenio[],int tamDuenio)
+int altaTrabajo(eTrabajo listaTrabajo[],int tamTrabajo,int* pIdTrab,eMascota lista[],int tam,eColor colorMascota[],int tamColor,eTipo tipoLista[],int tamTipo,eServicio listaServicio[],int tamServ,eCliente listaDuenio[],int tamDuenio)
 {
 	int todoOk = -1;
 
